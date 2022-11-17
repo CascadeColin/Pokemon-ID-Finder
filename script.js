@@ -44,7 +44,7 @@ const getPokemon = async (id) => {
         const data = await response.json()
         result.textContent = "Name: " + data.name;
     } catch(err) {
-        result.textContent = err;
+        result.textContent = "Please enter a valid name or ID (spelling matters!)";
     }
 }
 
@@ -55,7 +55,7 @@ const getPokemonByName = async (id) => {
         result.textContent = "ID: " + data.id;
 
     } catch(err) {
-        result.textContent = err;
+        result.textContent = "Please enter a valid name or ID (spelling matters!)";
     }
     
 }
