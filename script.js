@@ -28,7 +28,7 @@ const getPokemon = async (id) => {
         // The fetch URL is a template literal as defined by using backticks (`) and form strings, just like ' and ".  "${id}" is an expression and the value is converted to a string, and is the major benefit of using ` instead of ' or ".
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`);
         const data = await response.json()
-        result.textContent = "Name: " + data.name;
+        result.textContent = `Name: ${data.name}`;
     } catch(err) {
         result.textContent = "Please enter a valid name or ID (spelling matters!)";
     }
@@ -41,7 +41,7 @@ const getPokemonByName = async (id) => {
         // "await" tells the function to wait for a promise before continuing.  In this case, we are waiting for a response from PokeAPI, and then attributing that response to "const response".
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`);
         const data = await response.json()
-        result.textContent = "ID: " + data.id;
+        result.textContent = `ID: ${data.id}`;
     } catch(err) {
         // "result.textContent = err" will display the unfiltered error response, which is useful for us but not a good look in a frontend deployment.  "err" is just a parameter name, you can call it whatever you want, but using "err" is readable and good practice because "error" is a reserved keyword.
         result.textContent = "Please enter a valid name or ID (spelling matters!)";
