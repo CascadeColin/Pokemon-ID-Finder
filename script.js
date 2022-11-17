@@ -23,7 +23,7 @@ const inputEl = document.querySelector("#input");
 const result = document.querySelector("#result");
 
 // almost identical to "fetch/then" in functionality.  "Try/Catch" is an ES7 feature and more readable in my opinion.
-const getPokemon = async (id) => {
+const getPokemonByID = async (id) => {
     try {
         // The fetch URL is a template literal as defined by using backticks (`) and form strings, just like ' and ".  "${id}" is an expression and the value is converted to a string, and is the major benefit of using ` instead of ' or ".
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`);
@@ -60,7 +60,7 @@ let btnClicked = () => {
     // searches by ID if the input value can be converted into a number that is not NaN
 
     } else {
-        getPokemon(inputEl.value);
+        getPokemonByID(inputEl.value);
     }
 }
 
